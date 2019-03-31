@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6416d14c-92c6-4818-a60a-6063c3948ac8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/background.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sky.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stars.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workshop.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workshop.jpeg" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,8 +33,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+            <state relative-caret-position="265">
+              <caret line="18" column="77" selection-start-line="18" selection-start-column="77" selection-end-line="18" selection-end-column="77" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -89,10 +84,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="734" />
-    <option name="y" value="25" />
-    <option name="width" value="1186" />
-    <option name="height" value="1008" />
+    <option name="x" value="300" />
+    <option name="y" value="27" />
+    <option name="width" value="1620" />
+    <option name="height" value="1006" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -181,21 +176,25 @@
       <workItem from="1553315569249" duration="654000" />
       <workItem from="1553614083160" duration="5268000" />
       <workItem from="1553700542858" duration="4506000" />
-      <workItem from="1553789484512" duration="6388000" />
+      <workItem from="1553789484512" duration="6649000" />
+      <workItem from="1553930123700" duration="1325000" />
+      <workItem from="1554049644783" duration="54000" />
+      <workItem from="1554050059978" duration="763000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63832000" />
+    <option name="totallyTimeSpent" value="66235000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="734" y="25" width="1186" height="1008" extended-state="4" />
+    <frame x="960" y="27" width="960" height="1006" extended-state="4" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.26741186" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.1388889" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.3208191" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.32451093" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
@@ -241,6 +240,10 @@
     <entry file="file://$PROJECT_DIR$/gallery.html" />
     <entry file="file://$PROJECT_DIR$/atul.jpg" />
     <entry file="file://$PROJECT_DIR$/atulpic.jpg" />
+    <entry file="file://$PROJECT_DIR$/workshop.jpeg" />
+    <entry file="file://$PROJECT_DIR$/workshop.html" />
+    <entry file="file://$PROJECT_DIR$/sky.jpg" />
+    <entry file="file://$PROJECT_DIR$/stars.jpg" />
     <entry file="file://$PROJECT_DIR$/Atul.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -259,29 +262,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/workshop.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workshop.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sky.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stars.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+        <state relative-caret-position="265">
+          <caret line="18" column="77" selection-start-line="18" selection-start-column="77" selection-end-line="18" selection-end-column="77" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
