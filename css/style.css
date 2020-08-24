@@ -1,17 +1,4 @@
 
-/*
-  Theme Name: Folio
-  Theme URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
-  Author: BootstrapMade.com
-  Author URL: https://bootstrapmade.com
-*/
-
-/*  General Styling
-/*-----------------------------------------------------------------------------------*/
-
-
-
-
 /* Style inputs */
 input[type=text], select, textarea {
   width: 100%;
@@ -304,8 +291,8 @@ nav ul li a {
 /*-----------------------------------------------------------------------------------*/
 
 #header {
-  background: url("../images/ns.jpeg") repeat scroll center center / cover;
-  background-size: 100% 100%;
+  background: url("../images/atulben\ \(copy\).jpeg") scroll center center / cover;
+  background-size:100% 100%;
 }
 
 
@@ -314,7 +301,8 @@ nav ul li a {
   text-align: left;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-block-end: 50px;
   flex-direction: column;
 }
 
@@ -354,7 +342,7 @@ nav ul li a {
   width: 100%;
   height: auto;
   background: #f7f7f7;
-  padding-top: 190px;
+  padding-top: 100px;
 }
 
 #about .div-img-bg {
