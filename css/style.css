@@ -291,7 +291,8 @@ nav ul li a {
 /*-----------------------------------------------------------------------------------*/
 
 #header {
-  background: url("../images/symptots.jpg") scroll center center / cover;
+  /* background: url("../images/symptots.jpg") scroll center center / cover; */
+  background-color: #292929;
   background-size:100% 100%;
 }
 
