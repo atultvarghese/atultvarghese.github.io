@@ -681,3 +681,11 @@ nav ul li a {
 .credits {
   font-size: 13px;
 }
+
+ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+ul li {
+  margin: 10px 0;
+}
