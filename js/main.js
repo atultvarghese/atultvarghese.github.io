@@ -1,157 +1,106 @@
-/*global $, jQuery, alert*/
-$(document).ready(function() {
+/**
+ * Atul T Varghese Portfolio JavaScript
+ * Custom scripts for spotlight tracking, scrollspy, and contact form handling.
+ */
 
+document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
   // ========================================================================= //
-  //  //SMOOTH SCROLL
+  //  Spotlight Tracking Effect
   // ========================================================================= //
+  const spotlight = document.querySelector('.spotlight');
+  if (spotlight) {
+    window.addEventListener('mousemove', (e) => {
+      spotlight.style.setProperty('--mouse-x', `${e.clientX}px`);
+      spotlight.style.setProperty('--mouse-y', `${e.clientY}px`);
+    });
+  }
 
+  // ========================================================================= //
+  //  Scrollspy for Navigation Highlight
+  // ========================================================================= //
+  const sections = document.querySelectorAll('section');
+  const navItems = document.querySelectorAll('.nav-item');
 
-  $(document).on("scroll", onScroll);
+  function scrollSpy() {
+    let currentSectionId = '';
+    const scrollPosition = window.scrollY + 180; // Trigger trigger-point offset
 
-  $('a[href^="#"]').on('click', function(e) {
-    e.preventDefault();
-    $(document).off("scroll");
-
-    $('a').each(function() {
-      $(this).removeClass('active');
-      if ($(window).width() < 768) {
-        $('.nav-menu').slideUp();
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      if (scrollPosition >= top && scrollPosition < top + height) {
+        currentSectionId = section.getAttribute('id');
       }
     });
 
-    $(this).addClass('active');
-
-    var target = this.hash,
-        menu = target;
-
-    target = $(target);
-    $('html, body').stop().animate({
-      'scrollTop': target.offset().top - 80
-    }, 500, 'swing', function() {
-      window.location.hash = target.selector;
-      $(document).on("scroll", onScroll);
-    });
-  });
-
-
-  function onScroll(event) {
-    if ($('.home').length) {
-      var scrollPos = $(document).scrollTop();
-      $('nav ul li a').each(function() {
-        var currLink = $(this);
-        var refElement = $(currLink.attr("href"));
+    if (currentSectionId) {
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        const link = item.querySelector('a');
+        if (link && link.getAttribute('href') === `#${currentSectionId}`) {
+          item.classList.add('active');
+        }
       });
     }
   }
 
-  // ========================================================================= //
-  //  //NAVBAR SHOW - HIDE
-  // ========================================================================= //
-
-
-  $(window).scroll(function() {
-    var scroll = $(window).scrollTop();
-    if (scroll > 200 ) {
-      $("#main-nav, #main-nav-subpage").slideDown(700);
-      $("#main-nav-subpage").removeClass('subpage-nav');
-    } else {
-      $("#main-nav").slideUp(700);
-      $("#main-nav-subpage").hide();
-      $("#main-nav-subpage").addClass('subpage-nav');
-    }
-  });
+  window.addEventListener('scroll', scrollSpy);
+  scrollSpy(); // Initial run to set state on load
 
   // ========================================================================= //
-  //  // RESPONSIVE MENU
+  //  Native Fetch Contact Form Submit Handler
   // ========================================================================= //
-
-  $('.responsive').on('click', function(e) {
-    $('.nav-menu').slideToggle();
-  });
-
-  // ========================================================================= //
-  //  Typed Js
-  // ========================================================================= //
-
-  var typed = $(".typed");
-
-  $(function() {
-    typed.typed({
-      strings: ["Atul T Varghese","a Developer."],
-      typeSpeed: 100,
-      loop: true,
-    });
-  });
-
-
-  // ========================================================================= //
-  //  Owl Carousel Services
-  // ========================================================================= //
-
-
-  $('.services-carousel').owlCarousel({
-      autoplay: true,
-      loop: true,
-      margin: 20,
-      dots: true,
-      nav: false,
-      responsiveClass: true,
-      responsive: { 0: { items: 1 }, 768: { items: 2 }, 900: { items: 4 } }
-    });
-
-  // ========================================================================= //
-  //  magnificPopup
-  // ========================================================================= //
-
-  var magnifPopup = function() {
-    $('.popup-img').magnificPopup({
-      type: 'image',
-      removalDelay: 300,
-      mainClass: 'mfp-with-zoom',
-      gallery: {
-        enabled: true
-      },
-      zoom: {
-        enabled: true, // By default it's false, so don't forget to enable it
-
-        duration: 300, // duration of the effect, in milliseconds
-        easing: 'ease-in-out', // CSS transition easing function
-
-        // The "opener" function should return the element from which popup will be zoomed in
-        // and to which popup will be scaled down
-        // By defailt it looks for an image tag:
-        opener: function(openerElement) {
-          // openerElement is the element on which popup was initialized, in this case its <a> tag
-          // you don't need to add "opener" option if this code matches your needs, it's defailt one.
-          return openerElement.is('img') ? openerElement : openerElement.find('img');
+  const contactForm = document.getElementById('submit-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      
+      const submitBtn = contactForm.querySelector('input[type="submit"]') || contactForm.querySelector('button[type="submit"]');
+      const originalVal = submitBtn ? (submitBtn.value || submitBtn.textContent) : 'Submit';
+      
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        if (submitBtn.tagName === 'INPUT') {
+          submitBtn.value = 'Sending Message Please Wait...';
+        } else {
+          submitBtn.textContent = 'Sending Message Please Wait...';
         }
       }
+
+      // Format data as x-www-form-urlencoded (matching original jQuery serialize)
+      const formData = new FormData(contactForm);
+      const urlSearchParams = new URLSearchParams();
+      for (const [key, value] of formData.entries()) {
+        urlSearchParams.append(key, value);
+      }
+
+      fetch('https://script.google.com/macros/s/AKfycbzsKS3wGKMaj57tltTnCZSnKH0IzS9Wdt6gXu4fL0SaoTExB90/exec', {
+        method: 'POST',
+        body: urlSearchParams,
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      })
+      .then(response => {
+        alert('Message sent successfully!');
+        contactForm.reset();
+        window.location.reload();
+      })
+      .catch(error => {
+        console.error('Error submitting form:', error);
+        alert('Something went wrong. Please try again.');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          if (submitBtn.tagName === 'INPUT') {
+            submitBtn.value = originalVal;
+          } else {
+            submitBtn.textContent = originalVal;
+          }
+        }
+      });
     });
-  };
-
-
-  // Call the functions
-  magnifPopup();
-
+  }
 });
-
-// ========================================================================= //
-//  Porfolio isotope and filter
-// ========================================================================= //
-$(window).load(function(){
-
-  var portfolioIsotope = $('.portfolio-container').isotope({
-    itemSelector: '.portfolio-thumbnail',
-    layoutMode: 'fitRows'
-  });
-
-  $('#portfolio-flters li').on( 'click', function() {
-    $("#portfolio-flters li").removeClass('filter-active');
-    $(this).addClass('filter-active');
-
-    portfolioIsotope.isotope({ filter: $(this).data('filter') });
-  });
-
-})
